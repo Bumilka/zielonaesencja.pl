@@ -3,114 +3,90 @@
 
 <head>
   <meta charset='UTF-8' />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home Page</title>
   <link rel='stylesheet' href='styles.css' />
 </head>
 
 <body>
-  <div class='menu-container'>
-    <div class='menu'>
-      <div class='date'>Aug 14, 2016</div>
-      <div class='signup'>Sign Up</div>
-      <div class='login'>Login</div>
-    </div>
-  </div>
 
   <!-- Sekcja :  Dlaczego My-->
   <style>
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .menu-container {
-    color: #fff;
-    background-color: #5995DA;  /* Blue */
-    padding: 20px 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .menu {
-    border: 1px solid #fff;  /* For debugging */
-    width: 900px;
-    display: flex;
-    justify-content: space-around;
-  }
-  
-    @media only screen and (min-width: 1200px) {
-      .why-as__section {
-        height: 337px;
-        width: 100%;
-        text-align: center;
-        font-family: 'Open Sans';
-        color: #333333;
-      }
-      
-      .why-as__title {
-        padding-bottom: 40px;
-        padding-top: 40px;
-        font-family: 'Open Sans';
-        font-size: 28px;
-      }
-      
-      .why-as__container {
-        background: #5CBF140F 0% 0% no-repeat padding-box;
-        opacity: 1;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
-
-      .why-as__item {
-        display: flex;
-        flex-direction: column;
-        padding-left: 90px;
-        padding-right: 90px;
-        padding-top: 70px;
-        padding-bottom: 70px;
-      }
-
-      .why-as__text {
-        padding-top: 25px;
-        font-size: 14px;
-        font-weight: bold;
-        width: 150px;
-      }
+    .why-as__section {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color: #333333;
+      text-align: center;
+    }
+    .why-as__container {
+      background: #5CBF140F 0% 0% no-repeat padding-box;
+      opacity: 1;
     }
 
     @media only screen and (max-width: 812px) {
+
+      .why-as__title {
+        margin-bottom: 20px;
+        margin-top: 20px;
+        font-size: 1.1em;
+        height: auto;
+        line-height: 1.1 !important;
+        padding: 6px 0 5px;
+        font-weight: 600;
+      }
+    }
+
+
+    .why-as__item {
+      padding-top: 30px;
+      width: 500px;
+    }
+
+    .why-as__item,
+    .why-as__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .why-as__item>img {
+      width: 250px;
+    }
+
+    .why-as__text {
+      padding-top: 7px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    @media only screen and (min-width: 813px) {
       .why-as__section {
         height: 337px;
-        width: 100%;
-        text-align: center;
-        font-family: 'Open Sans';
-        color: #333333;
       }
-      
+
       .why-as__title {
         padding-bottom: 40px;
-        padding-top: 10px;
-        font-family: 'Open Sans';
+        padding-top: 40px;
         font-size: 28px;
       }
-      
+
       .why-as__container {
-        background: #5CBF140F 0% 0% no-repeat padding-box;
-        opacity: 1;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
+        align-items: baseline;
+        padding-left: 90px;
+        padding-right: 90px;
       }
 
       .why-as__item {
         display: flex;
         flex-direction: column;
-        padding-left: 90px;
-        padding-right: 90px;
+        padding-top: 70px;
+        padding-bottom: 50px;
+      }
+
+      .why-as__item>img {
+        width: 150px;
       }
 
       .why-as__text {
@@ -120,31 +96,27 @@
         width: 150px;
       }
     }
-
   </style>
   <div class='why-as__section'>
     <div class='why-as__title'>
-      <span>
-        DLACZEGO MY
-      </span>
+      <span>DLACZEGO MY</span>
     </div>
     <div class='why-as__container'>
-
       <div class='why-as__item'>
-        <img src="https://i.ibb.co/nm5cKyG/dlaczego-my-darmowa-wysylka.jpg" alt="Darmowa dostawa" style="width: 150px;" />
+        <img src="https://i.ibb.co/nm5cKyG/dlaczego-my-darmowa-wysylka.jpg" alt="Darmowa dostawa" />
         <span class="why-as__text">DARMOWA DOSTAWA</span>
       </div>
       <div class='why-as__item'>
-        <img src="https://i.ibb.co/8b2Kn4h/dlaczego-my-zwrot.jpg" alt="Zwrot w ciągu 100 dni" style="width: 150px;" />
+        <img src="https://i.ibb.co/8b2Kn4h/dlaczego-my-zwrot.jpg" alt="Zwrot w ciągu 100 dni" />
         <span class="why-as__text">ZWROT W CIĄGU <br /> 100 DNI</span>
       </div>
       <div class='why-as__item'>
-        <img src="https://i.ibb.co/FxcTBGM/dlaczego-my-24h.jpg" alt="Szybka wysyłka" style="width: 150px;" />
-        <span class="why-as__text">SZYBKA WYSYŁKA</span>
+        <img src="https://i.ibb.co/FxcTBGM/dlaczego-my-24h.jpg" alt="Szybka wysyłka" " />
+          <span class=" why-as__text">SZYBKA WYSYŁKA</span>
       </div>
       <div class='why-as__item'>
-        <img src="https://i.ibb.co/QmGmFg8/dlaczego-my-pozytywne-opinie.jpg" alt="99% pozytywnych opini" style="width: 150px;" />
-        <span class="why-as__text">99% POZYTYWNYCH <br /> OPINI</span>
+        <img src="https://i.ibb.co/QmGmFg8/dlaczego-my-pozytywne-opinie.jpg" alt="99% pozytywnych opini" />
+        <span class="why-as__text" style="padding-bottom: 20px;">99% POZYTYWNYCH <br /> OPINI</span>
       </div>
     </div>
   </div>
