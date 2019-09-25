@@ -12,12 +12,17 @@
 
     <!-- Start Section about-as-->
     <style>
+        .about-as__section--title {
+            text-align: center !important;
+        }
+
         .about-as__section,
         .about-as__description--down {
-            font-family: 'Open sans', Arial, sans-serif;
+            font-family: 'Open sans', sans-serif;
             color: #333333;
-            text-align: center;
+            text-align: left;
             margin-bottom: 10px;
+            font-size: 14px;
         }
 
         .about-as__description--top,
@@ -32,195 +37,372 @@
 
         }
 
-        @media only screen and (max-width: 812px) {}
+        @media only screen and (max-width: 812px) {
+            .about-as__section--title {
+                margin-bottom: 20px;
+                margin-top: 20px;
+                font-size: 1.1em;
+                height: auto;
+                line-height: 1.1 !important;
+                padding: 6px 0 5px;
+                font-weight: 600;
+
+            }
+        }
+
 
         @media only screen and (min-width: 813px) {
-            .about-as__title {
+            .about-as__section--title {
                 padding-bottom: 30px;
                 padding-top: 10px;
                 display: block;
                 font-size: 28px;
-                font-weight: normal;
                 letter-spacing: 3px;
             }
+        }
 
-            .about-as__description--title {
-                font-weight: bold;
-            }
+        .about-as__accordion {
+            background-color: #eee;
+            cursor: pointer;
+            padding: 5px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
 
-            .about-as__description--top,
-            .about-as__description--title,
-            .about-as__description--text {
-                padding-right: 100px;
-                padding-left: 100px;
-                text-align: left;
-            }
+        .active,
+        .about-as__accordion:hover {
+            background-color: rgb(245, 241, 241);
+        }
+
+        .about-as__accordion:after {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2212";
+        }
+
+        .about-as__accordion--panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+
+        .about-as__description--title {
+            font-weight: bold;
+            color: #5CBF14;
+        }
+
+        .about-as__description--top,
+        .about-as__description--title,
+        .about-as__description--text {
+            padding-right: 5px;
+            padding-left: 5px;
+            text-align: left;
+        }
+
+        .about-as__description--top,
+        .about-as__description--title,
+        .about-as__hiperlink {
+            background: linear-gradient(330deg, black 25%, #5CBF14 50%, black 75%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
 
-            .about-as__description--top {
-                font: Bold 20px/27px 'Open Sans';
-                padding-top: 10px;
-                padding-bottom: 10px;
-            }
+        .about-as__description--top {
+            font: Bold 20px 'Open Sans', sans-serif;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
 
-            .about-as__container {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-                align-items: baseline;
-                padding-left: 90px;
-                padding-right: 90px;
-            }
+        .about-as__container {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
 
-            .about-as__item {
-                display: flex;
-                flex-direction: column;
-                padding-top: 70px;
-                padding-bottom: 50px;
-            }
+        .about-as__item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            width: 100%;
+            border-width: 3px;
+            border-style: solid;
+            border-image: linear-gradient(to right, #0e0d0e 0%, #5CBF14 100%);
+            border-image-slice: 1;
+            border-width: 3px;
+        }
 
-            .about-as__item>img {
-                width: 150px;
-            }
 
-            .about-as__text {
-                padding-top: 25px;
-                font-size: 14px;
-                font-weight: bold;
-                width: 150px;
-            }
+        .about-as__hiperlink-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            padding-right: 20px;
+        }
+
+        .about-as__hiperlink {
+
+            font-size: 12px;
+            font-weight: bold;
+            padding: 10px;
+            color: black;
+        }
+
+        #more {
+            display: none;
+
+
+
+
+        }
+
+        #myBtn {
+            background: rgb(255, 255, 255);
+            border-image-slice: 1;
+            border-width: 0px;
+
         }
     </style>
     <div class='about-as__section'>
-        <div class='about-as__title'>
+        <div class='about-as__section--title'>
             <span>SKLEP ZE ZDROWĄ ŻYWNOŚCIĄ</span>
         </div>
         <div>
             <div class='about-as__description--top'>
                 <span>
-                    Zielona Esencja to miejsce, które powstało po to, by każdego dnia dostarczać Ci witamin, minerałów i
+                    Zielona Esencja to miejsce, które powstało po to, by każdego dnia dostarczać Ci witamin,
+                    minerałów i
                     innych cennych składników odżywczych.
                 </span>
             </div>
             <div>
                 <p class='about-as__description--title'>
-                    Wraz z naszymi produktami chcemy dostarczyć Ci pozytywnej energii do życia, po to byś każdego dnia
+                    Wraz z naszymi produktami chcemy dostarczyć Ci pozytywnej energii do życia, po to byś każdego
+                    dnia
                     budził się szczęśliwy i dzielił się tym szczęściem z bliskimi.
-
                 </p>
                 <p class='about-as__description--text'>
-                    Dlatego w naszym zakładzie, w którym konfekcjonujemy zdrową żywność, znajdują się tylko sprawdzone
-                    surowce roślinne, o których jesteśmy przekonani, że zbudują Twoją siłę i sprawią, że będziesz czuł
-                    się wypoczęty, zdrowy i pełny witalności. Wiemy, że tylko żywność wysokiej jakości może przynieść
-                    takie efekty, dlatego nie godzimy się na bylejakość i dokładnie sprawdzamy naszych dostawców. W
-                    opakowaniach z logo naszego sklepu ze zdrową żywnością znajdują się tylko doskonałej jakości surowce
-                    roślinne, które sprowadzamy dla Ciebie ze wszystkich stron świata. Chcemy Cię także przekonać do
-                    tego, że zdrowa żywność to smaczna żywność. Obok produktów, które pomagają przy różnorakich
-                    dolegliwościach (ostropest, czystek), znajdują się także chrupiące pestki dyni, słonecznik czy
-                    orzechy arachidowe prażone bez soli. Naszym zadaniem jest to, żeby produkty, które znajdą się na
-                    Twoim stole, były świeże i pełnowartościowe i każdego dnia pracujemy nad tym, by tak właśnie było.
+                    Dlatego w naszym zakładzie, w którym konfekcjonujemy zdrową żywność, znajdują się tylko
+                    sprawdzone
+                    surowce roślinne, o których jesteśmy przekonani, że zbudują Twoją siłę i sprawią, że będziesz
+                    czuł
+                    się wypoczęty, zdrowy i pełny witalności.
+                    <span id="dots">...</span><span id="more">Wiemy, że tylko żywność wysokiej jakości może
+                        przynieść
+                        takie efekty, dlatego nie godzimy się na bylejakość i dokładnie sprawdzamy naszych dostawców. W
+                        opakowaniach z logo naszego sklepu ze zdrową żywnością znajdują się tylko doskonałej jakości
+                        surowce
+                        roślinne, które sprowadzamy dla Ciebie ze wszystkich stron świata. Chcemy Cię także przekonać do
+                        tego, że zdrowa żywność to smaczna żywność. Obok produktów, które pomagają przy różnorakich
+                        dolegliwościach (ostropest, czystek), znajdują się także chrupiące pestki dyni, słonecznik czy
+                        orzechy arachidowe prażone bez soli. Naszym zadaniem jest to, żeby produkty, które znajdą się na
+                        Twoim stole, były świeże i pełnowartościowe i każdego dnia pracujemy nad tym, by tak właśnie
+                        było.
+                    </span>
+                    <button onclick="myFunction()" id="myBtn">Czytaj wiecej</button>
+
                 </p>
+
+            </div>
+        </div>
+
+        <div class='about-as__container'>
+        </div>
+        <div class='about-as__item'>
+            <button class="about-as__accordion about-as__description--title">Orzechy z egzotycznych krajów i z
+                Polski</button>
+            <div class="about-as__accordion--panel">
+                <p class="about-as__description--text">Orzechy zawierają niezbędne nienasycone kwasy tłuszczowe,
+                    wiele witamin i minerałów. Każdy z nas
+                    ma
+                    jednak inne preferencje kulinarne i lubi co innego. Dlatego w naszym sklepie ze zdrową żywnością
+                    znajdziesz całą gamę tych najzdrowszych przekąsek pod słońcem wraz z wartościami, które w sobie
+                    mają. Fistaszki, jako że rosną w ziemi i bliżej im do grochu, mają najwięcej białka ze
+                    wszystkich
+                    orzechów, ale wyróżniają się także dużą ilością witaminy B3. Migdały australijskie są bogatym
+                    źródłem magnezu i fosforu. Orzechom brazylijskim żadna roślina nie dorówna pod względem
+                    zawartości
+                    selenu. Orzechy laskowe mają w sobie dużo nienasyconych kwasów tłuszczowych, oprócz tego
+                    zawierają
+                    także witaminę E. Orzechy włoskie są mistrzem pod względem zawartości wielonienasyconych kwasów
+                    tłuszczowych, dodatkowo zawierają w sobie także witaminę B6. Nerkowce mają w sobie dużo białka,
+                    magnezu, fosforu, cynku i żelaza. Orzechy makadamia składają się praktycznie z samego tłuszczu,
+                    ale
+                    to zdrowy tłuszcz! Podobnie mają orzechy pekan. Tylko te obok tłuszczów, zawierają także dużo
+                    cynku.
+                    Orzeszki piniowe znakomicie komponują się z makaronami. Są źródłem cynku i magnezu.</p>
+                <div class='about-as__hiperlink-container'>
+                    <a href="https://zielonaesencja.pl/pol_m_Bakalie_Orzechy-810.html" class='about-as__hiperlink'>
+                        Sprawdź ofertę >
+                    </a>
+                </div>
             </div>
         </div>
 
 
-        <div class='about-as__container'>
-            <div class='about-as__item'>
-                <p class='about-as__description--title'>
-                    <span>
-                        Orzechy z egzotycznych krajów i z polskiego podwórka
-                    </span>
-                </p>
-                <p>
-                    <span class="about-as__text">
-                        Orzechy zawierają niezbędne nienasycone kwasy tłuszczowe, wiele witamin
-                        i minerałów. Każdy z nas ma jednak inne preferencje kulinarne i lubi co innego. Dlatego w naszym
-                        sklepie ze zdrową żywnością znajdziesz całą gamę tych najzdrowszych przekąsek pod słońcem wraz z
-                        wartościami, które w sobie mają. Fistaszki, jako że rosną w ziemi i bliżej im do grochu, mają
-                        najwięcej białka ze wszystkich orzechów, ale wyróżniają się także dużą ilością witaminy B3.
-                        Migdały australijskie są bogatym źródłem magnezu i fosforu. Orzechom brazylijskim żadna roślina
-                        nie dorówna pod względem zawartości selenu. Orzechy laskowe mają w sobie dużo nienasyconych
-                        kwasów tłuszczowych, oprócz tego zawierają także witaminę E. Orzechy włoskie są mistrzem pod
-                        względem zawartości wielonienasyconych kwasów tłuszczowych, dodatkowo zawierają w sobie także
-                        witaminę B6. Nerkowce mają w sobie dużo białka, magnezu, fosforu, cynku i żelaza. Orzechy
-                        makadamia składają się praktycznie z samego tłuszczu, ale to zdrowy tłuszcz! Podobnie mają
-                        orzechy pekan. Tylko te obok tłuszczów, zawierają także dużo cynku. Orzeszki piniowe znakomicie
-                        komponują się z makaronami. Są źródłem cynku i magnezu. </span>
-                </p>
+        <div class='about-as__item'>
+            <button class="about-as__accordion about-as__description--title">Wszelkiej maści oleje roślin</button>
+            <div class="about-as__accordion--panel">
+                <p class="about-as__description--text">Ważny segment w naszym sklepie ze zdrową żywnością zajmują
+                    nierafinowane oleje tłoczone na zimno.
+                    Są
+                    wyraziste w smaku i zapachu. Wyróżniają się naturalnym kolorem i dość gęstą konsystencją, w
+                    której
+                    nierzadko znajduje się naturalnie występujący osad. Są one źródłem Niezbędnych Nienasyconych
+                    Kwasów
+                    Tłuszczowych (NNKT) i zawierają wiele witamin, dlatego tak ważne jest, by znalazły się w zdrowej
+                    zbilansowanej diecie. Wśród naszych propozycji znajdują się oleje niestandardowe – z orzechów
+                    arachidowych, migdałów, z czarnuszki, z nasion kolendry. Warto po nie sięgać nie tylko ze
+                    względu na
+                    walory smakowe, zapachowe oraz ikorzyści zdrowotne. Na naszej sklepowej półce znajdziesz też
+                    uniwersalne propozycje – olej rzepakowy, słonecznikowy, kokosowy. Oleje nierafinowane tłoczone
+                    na
+                    zimno są świetnymi dodatkami do sałatek, składnikami pesto i wielu innych dań. Nie wolno ich
+                    używać
+                    do smażenia, ponieważ wtedy tracą swoje właściwości, a wysoka temperatura wytwarza niebezpieczne
+                    dla
+                    organizmu związki. Nie bez powodu sprzedaje się je w niewielkich ciemnych butelkach. Koniecznie
+                    trzeba je chronić przed światłem i zużyć w ciągu kilku miesięcy.</p>
+                <div class='about-as__hiperlink-container'>
+                    <a href="https://zielonaesencja.pl/pol_m_Oleje-i-oliwy-814.html" class='about-as__hiperlink'>
+                        Sprawdź ofertę >
+                    </a>
+                </div>
             </div>
-            <div class='about-as__item'>
-                <p class='about-as__description--title'>
-                    <span>
-                        Przyprawy ze wszystkich stron świata
-                    </span>
-                </p>
-                <p>
-                    <span class="about-as__text">
-                        Przyprawy są niezastąpionym dodatkiem do dań. To właśnie one sprawiają, że potrawy nabierają
-                        oryginalnego smaku, zapachu, a czasem i koloru. Dlatego wciąż sprowadzamy do naszego sklepu nowe
-                        mieszkanki ziołowe i susze roślinne. Szczególny nacisk kładziemy na to, by proponowane przez nas
-                        dodatki do dań były pozbawione sztucznych składników. Przyprawy z logo Zielona Esencja nie
-                        potrzebują dodatkowych wzmacniaczy. Natura broni się sama. W naszym świecie przypraw znajdziesz
-                        rozmaite mieszanki, które zachwycą Cię swoim aromatem. Np. Zioła zamiast soli. To mieszanka
-                        przypraw dla kogoś, kto w swojej diecie musi unikać nadmiernej ilości sodu. Suszone pomidory z
-                        bazylią, to świetny dodatek do kanapek. Czosnek niedźwiedzi dodaje daniu specyficznego posmaku,
-                        a szczypta pieprzu czarnego wystarczy, by Twoje danie nabrało piekielnie ostrego smaku.
-                        Popularne są także mieszkanki, które stosuje się w kuchniach świata. Np. garam masala, która
-                        zawiera takie składniki jak: kolendra, pieprz czarny, kmin rzymski, cynamon, liść laurowy,
-                        goździki, kardamon, imbir, gałka muszkatołowa. Jedno jest pewne. Jeśli chcesz, by Twoje dania
-                        były smaczne, bez przypraw się nie obejdzie. </span>
-                </p>
+        </div>
+
+        <div class='about-as__item'>
+            <button class="about-as__accordion about-as__description--title">Przyprawy ze wszystkich stron
+                świata</button>
+            <div class="about-as__accordion--panel">
+                <p class="about-as__description--text">Przyprawy są niezastąpionym dodatkiem do dań. To właśnie one
+                    sprawiają, że potrawy nabierają
+                    oryginalnego smaku, zapachu, a czasem i koloru. Dlatego wciąż sprowadzamy do naszego sklepu nowe
+                    mieszkanki ziołowe i susze roślinne. Szczególny nacisk kładziemy na to, by proponowane przez nas
+                    dodatki do dań były pozbawione sztucznych składników. Przyprawy z logo Zielona Esencja nie
+                    potrzebują dodatkowych wzmacniaczy. Natura broni się sama. W naszym świecie przypraw znajdziesz
+                    rozmaite mieszanki, które zachwycą Cię swoim aromatem. Np. Zioła zamiast soli. To mieszanka
+                    przypraw
+                    dla kogoś, kto w swojej diecie musi unikać nadmiernej ilości sodu. Suszone pomidory z bazylią,
+                    to
+                    świetny dodatek do kanapek. Czosnek niedźwiedzi dodaje daniu specyficznego posmaku, a szczypta
+                    pieprzu czarnego wystarczy, by Twoje danie nabrało piekielnie ostrego smaku. Popularne są także
+                    mieszkanki, które stosuje się w kuchniach świata. Np. garam masala, która zawiera takie
+                    składniki
+                    jak: kolendra, pieprz czarny, kmin rzymski, cynamon, liść laurowy, goździki, kardamon, imbir,
+                    gałka
+                    muszkatołowa. Jedno jest pewne. Jeśli chcesz, by Twoje dania były smaczne, bez przypraw się nie
+                    obejdzie.</p>
+                <div class='about-as__hiperlink-container'>
+                    <a href="https://zielonaesencja.pl/pol_m_Przyprawy-829.html" class='about-as__hiperlink'>
+                        Sprawdź ofertę >
+                    </a>
+                </div>
             </div>
 
         </div>
-        <div class='about-as__container'>
-                <div class='about-as__item'>
-                    <p class='about-as__description--title'>
-                        <span>
-                            Orzechy z egzotycznych krajów i z polskiego podwórka
-                        </span>
-                    </p>
-                    <p>
-                        <span class="about-as__text">
-                            Orzechy zawierają niezbędne nienasycone kwasy tłuszczowe, wiele witamin
-                            i minerałów. Każdy z nas ma jednak inne preferencje kulinarne i lubi co innego. Dlatego w naszym
-                            sklepie ze zdrową żywnością znajdziesz całą gamę tych najzdrowszych przekąsek pod słońcem wraz z
-                            wartościami, które w sobie mają. Fistaszki, jako że rosną w ziemi i bliżej im do grochu, mają
-                            najwięcej białka ze wszystkich orzechów, ale wyróżniają się także dużą ilością witaminy B3.
-                            Migdały australijskie są bogatym źródłem magnezu i fosforu. Orzechom brazylijskim żadna roślina
-                            nie dorówna pod względem zawartości selenu. Orzechy laskowe mają w sobie dużo nienasyconych
-                            kwasów tłuszczowych, oprócz tego zawierają także witaminę E. Orzechy włoskie są mistrzem pod
-                            względem zawartości wielonienasyconych kwasów tłuszczowych, dodatkowo zawierają w sobie także
-                            witaminę B6. Nerkowce mają w sobie dużo białka, magnezu, fosforu, cynku i żelaza. Orzechy
-                            makadamia składają się praktycznie z samego tłuszczu, ale to zdrowy tłuszcz! Podobnie mają
-                            orzechy pekan. Tylko te obok tłuszczów, zawierają także dużo cynku. Orzeszki piniowe znakomicie
-                            komponują się z makaronami. Są źródłem cynku i magnezu. </span>
-                    </p>
+
+        <div class='about-as__item'>
+            <button class="about-as__accordion about-as__description--title">Kosmetyki naturalne
+            </button>
+            <div class="about-as__accordion--panel">
+                <p class="about-as__description--text">Nie mogliśmy zapomnieć o naturalnych kosmetykach. Ważne jest nie
+                    tylko to, czym karmi się swój
+                    organizm, ale także to, co się nakłada na swoje ciało. Przez skórę wchłania się wiele
+                    substancji,
+                    także tych szkodliwych. Dlatego tak ważne jest to, by kosmetyki składały się z naturalnych
+                    składników. Nasz sklep ze zdrową żywnością oferuje Ci kosmetyki bez parabenów, SLS i innych
+                    szkodliwych dodatków. Proponowane przez nas produkty do pielęgnacji włosów i skóry zawierają
+                    naturalne ekstrakty i wyciągi, które działają wzmacniająco. Są także dodatkowo wzbogacone
+                    witaminami, by maksymalnie odżywić ciało. Oprócz kosmetyków dla dorosłych znajdziesz u nas całą
+                    gamę
+                    produktów dla dzieci, które powstały na bazie doskonale skomponowanych naturalnych składników.
+                    Płyny
+                    do kąpieli czy szampony zawierają delikatne środki myjące, co sprawia, że nie szczypią w oczy, a
+                    skóra jest nawilżona i natłuczona. Choć dobrze zbilansowana dieta jest podstawą zdrowego wyglądu
+                    włosów i skóry, to kosmetyki naturalne są uzupełnieniem, o którym warto pamiętać.</p>
+                <div class='about-as__hiperlink-container'>
+                    <a href="https://zielonaesencja.pl/pol_m_Kosmetyki-naturalne-801.html" class='about-as__hiperlink'>
+                        Sprawdź ofertę >
+                    </a>
                 </div>
-                <div class='about-as__item'>
-                    <p class='about-as__description--title'>
-                        <span>
-                                Wszelkiej maści oleje roślinne 
-                        </span>
-                    </p>
-                    <p>
-                        <span class="about-as__text">
-                                Ważny segment w naszym sklepie ze zdrową żywnością zajmują nierafinowane oleje tłoczone na zimno. Są wyraziste w smaku i zapachu. Wyróżniają się naturalnym kolorem i dość gęstą konsystencją, w której nierzadko znajduje się naturalnie występujący osad. Są one źródłem Niezbędnych Nienasyconych Kwasów Tłuszczowych (NNKT) i zawierają wiele witamin, dlatego tak ważne jest, by znalazły się w zdrowej zbilansowanej diecie. Wśród naszych propozycji znajdują się oleje niestandardowe – z orzechów arachidowych, migdałów, z czarnuszki, z nasion kolendry. Warto po nie sięgać nie tylko ze względu na walory smakowe i zapachowe, ale przede wszystkim ze względu na korzyści zdrowotne, które niosą ze sobą. Na naszej sklepowej półce znajdziesz też uniwersalne propozycje – olej rzepakowy, słonecznikowy, kokosowy. Oleje nierafinowane tłoczone na zimno są świetnymi dodatkami do sałatek, składnikami pesto i wielu innych dań. Nie wolno ich używać do smażenia, ponieważ wtedy tracą swoje właściwości, a wysoka temperatura wytwarza niebezpieczne dla organizmu związki. Nie bez powodu sprzedaje się je w niewielkich ciemnych butelkach. Koniecznie trzeba je chronić przed światłem i zużyć w ciągu kilku miesięcy, tak by płyn nie zdążył zjełczeć.   </span>
-                    </p>
-                </div>
-    
             </div>
+
+        </div>
         <div class='about-as__description--down'>
-            <div>
-                <p class='about-as__description--title'>
-                        Kosmetyki naturalne
-                </p>
-                <p class='about-as__description--text'>
-                        Nie mogliśmy zapomnieć o naturalnych kosmetykach. Ważne jest nie tylko to, czym karmi się swój organizm, ale także to, co się nakłada na swoje ciało. Przez skórę wchłania się wiele substancji, także tych szkodliwych. Dlatego tak ważne jest to, by kosmetyki składały się z naturalnych składników. Nasz sklep ze zdrową żywnością oferuje Ci kosmetyki bez parabenów, SLS i innych szkodliwych dodatków. Proponowane przez nas produkty do pielęgnacji włosów i skóry zawierają naturalne ekstrakty i wyciągi, które działają wzmacniająco. Są także dodatkowo wzbogacone witaminami, by maksymalnie odżywić ciało. Oprócz kosmetyków dla dorosłych znajdziesz u nas całą gamę produktów dla dzieci, które powstały na bazie doskonale skomponowanych naturalnych składników. Płyny do kąpieli czy szampony zawierają delikatne środki myjące, co sprawia, że nie szczypią w oczy, a skóra jest nawilżona i natłuczona. Choć dobrze zbilansowana dieta jest podstawą zdrowego wyglądu włosów i skóry, to kosmetyki naturalne są uzupełnieniem, o którym warto pamiętać. 
-                </p>
-            </div>
+            <p class='about-as__description--title'>
+                Chcesz zacząć zdrowo jeść? Uważaj, bo możesz zmienić swoje życie!
+            </p>
+            <p class='about-as__description--text'>
+                Widzimy to na przykładzie naszych klientów. Tych najwytrwalszych. Najpierw szukają zdrowych
+                zamienników.
+                Np. zamiast oleju rafinowanego, wybierają olej kokosowy nierafinowany, który jest jedynym roślinnym
+                olejem, na którym można smażyć. A zamiast chipsów stawiają na orzechy arachidowe prażone bez soli. Z
+                czasem do kolejnych zamówień dochodzą takie produkty jak kasze czy makarony pełnoziarniste. Małymi
+                krokami, dzień po dniu na ich stołach pojawiają się dania nieprzetworzone, naturalne, naładowane
+                witaminami i minerałami. Taka żywność dodaje energii do życia i poprawia samopoczucie. Jak
+                powszechnie
+                wiadomo – w zdrowym ciele zdrowy duch. Nic więc dziwnego, że nagle w ich życiu pojawiają się pomysły
+                na
+                nowe aktywności. Jest to aktywność fizyczna, jakieś ciekawe hobby czy odkurzenie swoich dawnych
+                pasji,
+                na które nigdy nie było czasu. Zielona Esencja inspiruje do zmian. Chcesz do nas dołączyć?
+                Zapraszamy
+                Cię w podróż, podczas której odkryjesz, co sprawia Ci najwięcej przyjemności i dodaje sił do życia.
+            </p>
         </div>
+
     </div>
+    <script>
+        var acc = document.getElementsByClassName("about-as__accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+
+        function myFunction() {
+            var dots = document.getElementById("dots");
+            var moreText = document.getElementById("more");
+            var btnText = document.getElementById("myBtn");
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Czytaj wiecej";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Czytaj mniej";
+                moreText.style.display = "inline";
+            }
+        }
+    </script>
     <!-- End Section about-as-->
     <div>
         próba
