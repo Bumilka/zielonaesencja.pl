@@ -12,8 +12,96 @@
 
     <!-- Start Section about-as-->
     <style>
-        .about-as__section--title {
+        @media only screen and (max-width: 812px) {
+            .about-as__section {
+                padding-left: 3px;
+                padding-right: 3px;
+            }
+
+            .about-as__description--title {
+                text-align: left !important;
+            }
+
+            .about-as__description--row {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: justify;
+            }
+
+            .about-as__description--top {
+                font-size: 14px !important;
+            }
+
+            .about-as__description--down {
+                display: none;
+            }
+
+            .about-as__description--images--desctop {
+                display: none;
+            }
+        }
+
+        @media only screen and (min-width: 813px) {
+            .about-as__section {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            .about-as__section--title {
+                font-size: 1em;
+            }
+
+            .about-as__description--down {
+                padding-top: 5px;
+                padding-bottom: 5px;
+
+            }
+
+            .about-as__description--row {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .about-as__description--images {
+                width: 150px;
+            }
+
+            .about-as__description--images--left {
+                padding-right: 20px;
+            }
+
+            .about-as__description--images--mobile {
+                display: none;
+            }
+        }
+
+        .about-as__section {
+            background: rgba(140, 191, 20, 0.059) 0% 0% no-repeat padding-box;
+        }
+
+        .about-as__description--text,
+        .about-as__section {
+            text-align: justify !important;
+        }
+
+        .about-as__section--title>h1 {
             text-align: center !important;
+            color: #333333;
+            display: block;
+            font-weight: normal;
+            letter-spacing: 3px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            padding: 8px 0 7px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .about-as__description--top {
+            font: Bold 20px 'Open Sans', sans-serif;
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
 
         .about-as__section,
@@ -27,50 +115,24 @@
 
         .about-as__description--top,
         .about-as__description--down {
-            background: #5CBF140F 0% 0% no-repeat padding-box;
             opacity: 1;
         }
-
-        .about-as__description--down {
-            padding-top: 5px;
-            padding-bottom: 5px;
-
-        }
-
-        @media only screen and (max-width: 812px) {
-            .about-as__section--title {
-                margin-bottom: 20px;
-                margin-top: 20px;
-                font-size: 1.1em;
-                height: auto;
-                line-height: 1.1 !important;
-                padding: 6px 0 5px;
-                font-weight: 600;
-
-            }
-        }
-
-
-        @media only screen and (min-width: 813px) {
-            .about-as__section--title {
-                padding-bottom: 30px;
-                padding-top: 10px;
-                display: block;
-                font-size: 28px;
-                letter-spacing: 3px;
-            }
+        .about-as__description--h2{
+            font-size: 15px;
         }
 
         .about-as__accordion {
-            background-color: #eee;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between; 
             cursor: pointer;
-            padding: 5px;
             width: 100%;
             border: none;
             text-align: left;
             outline: none;
-            font-size: 15px;
+            font-size: 12px !important;
             transition: 0.4s;
+
         }
 
         .active,
@@ -79,15 +141,15 @@
         }
 
         .about-as__accordion:after {
-            content: '\002B';
-            color: #777;
-            font-weight: bold;
+            content: url(/data/include/cms/sklep-ze-zdrowa-zywnoscia/angle-arrow-down.png);
             float: right;
-            margin-left: 5px;
+           padding-top:20px;
+           padding-right: 10px;
         }
 
         .active:after {
-            content: "\2212";
+            content: url(/data/include/cms/sklep-ze-zdrowa-zywnoscia/up-arrow.png);
+            padding-right: 10px;
         }
 
         .about-as__accordion--panel {
@@ -96,11 +158,11 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.2s ease-out;
+            background: rgba(140, 191, 20, 0) 0% 0% no-repeat padding-box;
         }
 
         .about-as__description--title {
             font-weight: bold;
-            color: #5CBF14;
         }
 
         .about-as__description--top,
@@ -108,22 +170,15 @@
         .about-as__description--text {
             padding-right: 5px;
             padding-left: 5px;
-            text-align: left;
         }
 
         .about-as__description--top,
         .about-as__description--title,
+        .about-as__description--h2,
         .about-as__hiperlink {
             background: linear-gradient(330deg, black 25%, #5CBF14 50%, black 75%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-        }
-
-
-        .about-as__description--top {
-            font: Bold 20px 'Open Sans', sans-serif;
-            padding-top: 10px;
-            padding-bottom: 10px;
         }
 
         .about-as__container {
@@ -150,6 +205,13 @@
             border-width: 3px;
         }
 
+        .about-as__description--images,
+        .about-as__description--images--mobile,
+        .about-as__description--images--desctop {
+            width: 150px;
+            padding-bottom: 10px;
+        }
+
 
         .about-as__hiperlink-container {
             display: flex;
@@ -159,76 +221,170 @@
         }
 
         .about-as__hiperlink {
-
             font-size: 12px;
             font-weight: bold;
             padding: 10px;
             color: black;
         }
 
-        #more {
-            display: none;
-
-
-
-
+        #about-as__button--read-more {
+            background: rgb(255, 255, 255);
+            border-width: 0px;
+            color: #5CBF14;
+            font-weight: bold;
         }
 
-        #myBtn {
-            background: rgb(255, 255, 255);
-            border-image-slice: 1;
-            border-width: 0px;
-
+        .about-as__section>hr,
+        .about-as__description--top>hr {
+            border: 1px solid #5CBF14;
         }
     </style>
     <div class='about-as__section'>
+        <hr />
         <div class='about-as__section--title'>
-            <span>SKLEP ZE ZDROWĄ ŻYWNOŚCIĄ</span>
+            <h1><b>Sklep ze zdrową żywnością Zielona Esencja</b></h1>
         </div>
         <div>
             <div class='about-as__description--top'>
-                <span>
-                    Zielona Esencja to miejsce, które powstało po to, by każdego dnia dostarczać Ci witamin,
-                    minerałów i
-                    innych cennych składników odżywczych.
-                </span>
+                <p>
+                    <span>
+                        Zielona Esencja to miejsce, które powstało po to, by każdego dnia dostarczać Ci witamin,
+                        minerałów i
+                        innych cennych składników odżywczych.
+                    </span>
+                </p>
             </div>
             <div>
-                <p class='about-as__description--title'>
-                    Wraz z naszymi produktami chcemy dostarczyć Ci pozytywnej energii do życia, po to byś każdego
-                    dnia
-                    budził się szczęśliwy i dzielił się tym szczęściem z bliskimi.
-                </p>
-                <p class='about-as__description--text'>
-                    Dlatego w naszym zakładzie, w którym konfekcjonujemy zdrową żywność, znajdują się tylko
-                    sprawdzone
-                    surowce roślinne, o których jesteśmy przekonani, że zbudują Twoją siłę i sprawią, że będziesz
-                    czuł
-                    się wypoczęty, zdrowy i pełny witalności.
-                    <span id="dots">...</span><span id="more">Wiemy, że tylko żywność wysokiej jakości może
-                        przynieść
-                        takie efekty, dlatego nie godzimy się na bylejakość i dokładnie sprawdzamy naszych dostawców. W
-                        opakowaniach z logo naszego sklepu ze zdrową żywnością znajdują się tylko doskonałej jakości
-                        surowce
-                        roślinne, które sprowadzamy dla Ciebie ze wszystkich stron świata. Chcemy Cię także przekonać do
-                        tego, że zdrowa żywność to smaczna żywność. Obok produktów, które pomagają przy różnorakich
-                        dolegliwościach (ostropest, czystek), znajdują się także chrupiące pestki dyni, słonecznik czy
-                        orzechy arachidowe prażone bez soli. Naszym zadaniem jest to, żeby produkty, które znajdą się na
-                        Twoim stole, były świeże i pełnowartościowe i każdego dnia pracujemy nad tym, by tak właśnie
-                        było.
+                <p class='about-as__description--title'><span>
+                        Wraz z naszymi produktami chcemy dostarczyć Ci pozytywnej energii do życia, po to byś każdego
+                        dnia
+                        budził się szczęśliwy i dzielił się tym szczęściem z bliskimi.
                     </span>
-                    <button onclick="myFunction()" id="myBtn">Czytaj wiecej</button>
-
                 </p>
-
+                <div class="about-as__description--row">
+                    <img src="/data/include/cms/sklep-ze-zdrowa-zywnoscia/mortar.png"
+                        class="about-as__description--images about-as__description--images--left"
+                        alt="moździerz-z-ziołami" />
+                    <p class='about-as__description--text'><span>
+                            Dlatego w naszym zakładzie, w którym konfekcjonujemy zdrową żywność, znajdują się tylko
+                            sprawdzone
+                            surowce roślinne, o których jesteśmy przekonani, że zbudują Twoją siłę i sprawią, że
+                            będziesz
+                            czuł
+                            się wypoczęty, zdrowy i pełny witalności.
+                            Wiemy, że tylko żywność wysokiej jakości może
+                            przynieść
+                            takie efekty, dlatego nie godzimy się na bylejakość i dokładnie sprawdzamy naszych
+                            dostawców. W
+                            opakowaniach z logo naszego sklepu ze zdrową żywnością znajdują się tylko doskonałej jakości
+                            surowce
+                            roślinne, które sprowadzamy dla Ciebie ze wszystkich stron świata. Chcemy Cię także
+                            przekonać do
+                            tego, że zdrowa żywność to smaczna żywność. Obok produktów, które pomagają przy różnorakich
+                            dolegliwościach (ostropest, czystek), znajdują się także chrupiące pestki dyni, słonecznik
+                            czy
+                            orzechy arachidowe prażone bez soli. Naszym zadaniem jest to, żeby produkty, które znajdą
+                            się na
+                            Twoim stole, były świeże i pełnowartościowe i każdego dnia pracujemy nad tym, by tak właśnie
+                            było.
+                        </span>
+                    </p>
+                </div>
             </div>
         </div>
+        <hr />
+        <p>
+            <span>
+                <h2 class='about-as__description--h2'>
+                    Zielona Esencja to miejsce dla wytrawnych i
+                    wytrwałych poszukiwaczy wysokojakościowej żywności.
+                </h2>
+            </span>
+        </p>
+
+        <div class="about-as__description--row">
+            <img src="/data/include/cms/sklep-ze-zdrowa-zywnoscia/buddhist-yoga-pose.png"
+                class="about-as__description--images--mobile" alt="yoga-pozycja">
+            <div>
+                <p>
+                    <span class="about-as__description--text">Miejsce, w którym znajdują się różnorodne produkty, które
+                        sprowadzamy dla
+                        Ciebie z dalekich zakątków świata. Wszystkie nasze produkty i surowce roślinne nabywamy tylko od
+                        sprawdzonych dostawców, dzięki temu jesteśmy pewni tego, że w naszym sklepie ze zdrową żywnością
+                        znajdują się tylko produkty wysokiej jakości. Tutaj znajdziesz wszystko, czego potrzebujesz do
+                        tego, by
+                        przygotowywać pełnowartościowe i zdrowe posiłki, a co za tym idzie, cieszyć się dobrym
+                        samopoczuciem
+                        każdego dnia.  W naszej ofercie znajdują się ekologiczne produkty znanych i cenionych
+                        producentów
+                        ekologicznej żywności. Sami również konfekcjonujemy żywność. W opakowaniach z logo Zielona
+                        Esencja
+                        znajdują się m.in. takie produkty jak kasza jaglana, nasiona chia, soczewica czy soja. Są to
+                        produkty
+                        nisko przetworzone, pozbawione sztucznych dodatków, substancji barwiących czy wzmacniaczy smaku.
+                        W
+                        naszej ofercie znajdują się doskonałej jakości bakalie i orzechy, spożywcze produkty pochodzenia
+                        roślinnego tj. zielony jęczmień, czystek czy komosa ryżowa, a także bogaty zestaw kaw, herbat i
+                        ziół,
+                        preparatów wspierających odchudzanie, substancji słodzących, olejów, przypraw i soli, makaronów,
+                        kaszy i
+                        ryżu oraz wielu innych zdrowych produktów, które wzbogacą Twoją codzienną dietę o
+                        pełnowartościowe
+                        składniki odżywcze, witaminy i minerały. </span>
+                </p>
+            </div>
+            <img src="/data/include/cms/sklep-ze-zdrowa-zywnoscia/buddhist-yoga-pose.png"
+                class="about-as__description--images--desctop" alt="yoga-pozycja">
+        </div>
+        <hr />
+        <p>
+            <span>
+                <h2 class='about-as__description--h2'>
+                    Sklep ze
+                    zdrową żywnością to kraina smaku, zapachu, energii i witalności.
+                </h2>
+            </span>
+        </p>
+        <div class="about-as__description--row">
+            <img src="/data/include/cms/sklep-ze-zdrowa-zywnoscia/apple-juice.png"
+                class="about-as__description--images about-as__description--images--left" alt="sok-jabłkowy" />
+            <p><span class="about-as__description--text"> To właśnie produkty zyskują podczas
+                    wolniejszej niż tradycyjna technologii produkcji. I to oddają Tobie, byś mógł zadbać o siebie i
+                    swoją
+                    rodzinę dokładnie tak, jak chcesz. Dlatego zdrowa żywność to nie tylko jedzenie, ale także filozofia
+                    życia, które skupia się na tym, co istotne, wartościowe i dobre. Tu wszystko jest inne, nie wymaga
+                    pośpiechu czy też sztucznych zamienników. W naszych produktach promujemy przede wszystkim wszystko,
+                    co
+                    naturalne w całym bogactwie nie tylko polskich upraw. Dzięki temu klientom jesteśmy w stanie
+                    zaserwować
+                    całą feerię kolorów i smaków. A to przekłada się na zdrowie, poprawia wydolność organizmu i jego
+                    długowieczność. Niezależnie więc od tego, kiedy zmieniłeś swoje zwyczaje żywieniowe, Zielona Esencja
+                    jest najlepszym adresem, pod jaki mogłeś trafić. Tylko świadome wybory, dbanie o jakość surowców
+                    oraz
+                    otaczające nas środowisko mogą sprawić, że będzie się żyło lżej, pełniej,
+                    zdrowiej.</span><br /><span>Zielona Esencja to nie tylko sklep ze zdrową żywnością. To sposób na
+                    życie.
+                    Pasja poszukiwania nowych kulinarnych nowości i dobre samopoczucie, które wynika z prowadzenia
+                    zdrowego
+                    stylu życia.</span></p>
+        </div>
+        <p style="text-align: justify;"><span
+                style="border-radius: 2px; text-indent: 20px; width: auto; padding: 0px 4px 0px 0px; text-align: center; font: bold 11px/20px 'Helvetica Neue',Helvetica,sans-serif; color: #ffffff; background: #bd081c  no-repeat scroll 3px 50% / 14px 14px; position: absolute; opacity: 1; z-index: 8675309; display: none; cursor: pointer; top: 21px; left: 18px;">Zapisz</span>
+        </p>
+        <p style="text-align: justify;"><span
+                style="border-radius: 2px; text-indent: 20px; width: auto; padding: 0px 4px 0px 0px; text-align: center; font: bold 11px/20px 'Helvetica Neue',Helvetica,sans-serif; color: #ffffff; background: #bd081c  no-repeat scroll 3px 50% / 14px 14px; position: absolute; opacity: 1; z-index: 8675309; display: none; cursor: pointer; top: 21px; left: 18px;">Zapisz</span>
+        </p>
+        <hr />
 
         <div class='about-as__container'>
         </div>
         <div class='about-as__item'>
-            <button class="about-as__accordion about-as__description--title">Orzechy z egzotycznych krajów i z
-                Polski</button>
+            <button class="about-as__accordion about-as__description--title">
+                <h2 class='about-as__description--h2'>
+                    Orzechy z egzotycznych krajów i z
+                    Polski
+                </h2>
+            </button>
             <div class="about-as__accordion--panel">
                 <p class="about-as__description--text">Orzechy zawierają niezbędne nienasycone kwasy tłuszczowe,
                     wiele witamin i minerałów. Każdy z nas
@@ -251,15 +407,18 @@
                     Orzeszki piniowe znakomicie komponują się z makaronami. Są źródłem cynku i magnezu.</p>
                 <div class='about-as__hiperlink-container'>
                     <a href="https://zielonaesencja.pl/pol_m_Bakalie_Orzechy-810.html" class='about-as__hiperlink'>
-                        Sprawdź ofertę >
+                        Sprawdź ofertę zdrowych orzechów >
                     </a>
                 </div>
             </div>
         </div>
 
-
         <div class='about-as__item'>
-            <button class="about-as__accordion about-as__description--title">Wszelkiej maści oleje roślin</button>
+            <button class="about-as__accordion about-as__description--title">
+                <h2 class='about-as__description--h2'>
+                    Wszelkiej maści oleje roślin
+                </h2>
+            </button>
             <div class="about-as__accordion--panel">
                 <p class="about-as__description--text">Ważny segment w naszym sklepie ze zdrową żywnością zajmują
                     nierafinowane oleje tłoczone na zimno.
@@ -283,15 +442,19 @@
                     trzeba je chronić przed światłem i zużyć w ciągu kilku miesięcy.</p>
                 <div class='about-as__hiperlink-container'>
                     <a href="https://zielonaesencja.pl/pol_m_Oleje-i-oliwy-814.html" class='about-as__hiperlink'>
-                        Sprawdź ofertę >
+                        Sprawdź ofertę oliw i olei >
                     </a>
                 </div>
             </div>
         </div>
 
         <div class='about-as__item'>
-            <button class="about-as__accordion about-as__description--title">Przyprawy ze wszystkich stron
-                świata</button>
+            <button class="about-as__accordion about-as__description--title">
+                <h2>
+                    Przyprawy ze wszystkich stron
+                    świata
+                </h2>
+            </button>
             <div class="about-as__accordion--panel">
                 <p class="about-as__description--text">Przyprawy są niezastąpionym dodatkiem do dań. To właśnie one
                     sprawiają, że potrawy nabierają
@@ -313,15 +476,18 @@
                     obejdzie.</p>
                 <div class='about-as__hiperlink-container'>
                     <a href="https://zielonaesencja.pl/pol_m_Przyprawy-829.html" class='about-as__hiperlink'>
-                        Sprawdź ofertę >
+                        Sprawdź ofertę przypraw bez chemi >
                     </a>
                 </div>
             </div>
-
         </div>
 
         <div class='about-as__item'>
-            <button class="about-as__accordion about-as__description--title">Kosmetyki naturalne
+            <button class="about-as__accordion about-as__description--title">
+                <h2  class='about-as__description--h2'>
+                    Kosmetyki naturalne
+
+                </h2>
             </button>
             <div class="about-as__accordion--panel">
                 <p class="about-as__description--text">Nie mogliśmy zapomnieć o naturalnych kosmetykach. Ważne jest nie
@@ -341,7 +507,7 @@
                     włosów i skóry, to kosmetyki naturalne są uzupełnieniem, o którym warto pamiętać.</p>
                 <div class='about-as__hiperlink-container'>
                     <a href="https://zielonaesencja.pl/pol_m_Kosmetyki-naturalne-801.html" class='about-as__hiperlink'>
-                        Sprawdź ofertę >
+                        Sprawdź ofertę kosmetyków naturalnych >
                     </a>
                 </div>
             </div>
@@ -369,6 +535,7 @@
                 Cię w podróż, podczas której odkryjesz, co sprawia Ci najwięcej przyjemności i dodaje sił do życia.
             </p>
         </div>
+        <hr />
 
     </div>
     <script>
@@ -386,27 +553,19 @@
                 }
             });
         }
-
-        function myFunction() {
-            var dots = document.getElementById("dots");
-            var moreText = document.getElementById("more");
-            var btnText = document.getElementById("myBtn");
-
-            if (dots.style.display === "none") {
-                dots.style.display = "inline";
-                btnText.innerHTML = "Czytaj wiecej";
-                moreText.style.display = "none";
-            } else {
-                dots.style.display = "none";
-                btnText.innerHTML = "Czytaj mniej";
-                moreText.style.display = "inline";
-            }
-        }
     </script>
     <!-- End Section about-as-->
     <div>
         próba
     </div>
+    <!--
+        <hr />
+<h1 style="text-align: center;">Sklep ze zdrową żywnością Zielona Esencja</h1>
+<p style="text-align: justify;"><br /><span style="font-size: 12pt;">Zielona Esencja to miejsce dla wytrawnych i wytrwałych poszukiwaczy wysokojakościowej żywności.</span><br /><br /><span style="font-size: 12pt;">Miejsce, w którym znajdują się różnorodne produkty, które sprowadzamy dla Ciebie z dalekich zakątków świata. Wszystkie nasze produkty i surowce roślinne nabywamy tylko od sprawdzonych dostawców, dzięki temu jesteśmy pewni tego, że w naszym sklepie ze zdrową żywnością znajdują się tylko produkty wysokiej jakości. Tutaj znajdziesz wszystko, czego potrzebujesz do tego, by przygotowywać pełnowartościowe i zdrowe posiłki, a co za tym idzie, cieszyć się dobrym samopoczuciem każdego dnia.  W naszej ofercie znajdują się ekologiczne produkty znanych i cenionych producentów ekologicznej żywności. Sami również konfekcjonujemy żywność. W opakowaniach z logo Zielona Esencja znajdują się m.in. takie produkty jak kasza jaglana, nasiona chia, soczewica czy soja. Są to produkty nisko przetworzone, pozbawione sztucznych dodatków, substancji barwiących czy wzmacniaczy smaku. W naszej ofercie znajdują się doskonałej jakości bakalie i orzechy, spożywcze produkty pochodzenia roślinnego tj. zielony jęczmień, czystek czy komosa ryżowa, a także bogaty zestaw kaw, herbat i ziół, preparatów wspierających odchudzanie, substancji słodzących, olejów, przypraw i soli, makaronów, kaszy i ryżu oraz wielu innych zdrowych produktów, które wzbogacą Twoją codzienną dietę o pełnowartościowe składniki odżywcze, witaminy i minerały.  </span><br /><br /><span style="font-size: 12pt;">Sklep ze zdrową żywnością to kraina smaku, zapachu, energii i witalności. To właśnie produkty zyskują podczas wolniejszej niż tradycyjna technologii produkcji. I to oddają Tobie, byś mógł zadbać o siebie i swoją rodzinę dokładnie tak, jak chcesz. Dlatego zdrowa żywność to nie tylko jedzenie, ale także filozofia życia, które skupia się na tym, co istotne, wartościowe i dobre. Tu wszystko jest inne, nie wymaga pośpiechu czy też sztucznych zamienników. W naszych produktach promujemy przede wszystkim wszystko, co naturalne w całym bogactwie nie tylko polskich upraw. Dzięki temu klientom jesteśmy w stanie zaserwować całą feerię kolorów i smaków. A to przekłada się na zdrowie, poprawia wydolność organizmu i jego długowieczność. Niezależnie więc od tego, kiedy zmieniłeś swoje zwyczaje żywieniowe, Zielona Esencja jest najlepszym adresem, pod jaki mogłeś trafić. Tylko świadome wybory, dbanie o jakość surowców oraz otaczające nas środowisko mogą sprawić, że będzie się żyło lżej, pełniej, zdrowiej.</span><br /><span style="font-size: 12pt;">Zielona Esencja to nie tylko sklep ze zdrową żywnością. To sposób na życie. Pasja poszukiwania nowych kulinarnych nowości i dobre samopoczucie, które wynika z prowadzenia zdrowego stylu życia.</span></p>
+<p style="text-align: justify;"><span style="border-radius: 2px; text-indent: 20px; width: auto; padding: 0px 4px 0px 0px; text-align: center; font: bold 11px/20px 'Helvetica Neue',Helvetica,sans-serif; color: #ffffff; background: #bd081c  no-repeat scroll 3px 50% / 14px 14px; position: absolute; opacity: 1; z-index: 8675309; display: none; cursor: pointer; top: 21px; left: 18px;">Zapisz</span></p>
+<p style="text-align: justify;"><span style="border-radius: 2px; text-indent: 20px; width: auto; padding: 0px 4px 0px 0px; text-align: center; font: bold 11px/20px 'Helvetica Neue',Helvetica,sans-serif; color: #ffffff; background: #bd081c  no-repeat scroll 3px 50% / 14px 14px; position: absolute; opacity: 1; z-index: 8675309; display: none; cursor: pointer; top: 21px; left: 18px;">Zapisz</span></p>
+<hr />
+    -->
 </body>
 
 </html>

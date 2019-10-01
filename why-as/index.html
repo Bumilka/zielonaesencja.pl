@@ -17,6 +17,7 @@
       color: #333333;
       text-align: center;
       margin-bottom: 10px;
+
     }
 
     .why-as__container {
@@ -37,26 +38,26 @@
       }
     }
 
-
     .why-as__item {
       padding-top: 30px;
       width: 500px;
-    }
-
-    .why-as__item,
-    .why-as__container {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
+    .why-as__container {
+      display: flex;
+      flex-direction: row;
+    }
+
     .why-as__item>img {
-      width: 250px;
+      width: 100px;
     }
 
     .why-as__text {
       padding-top: 7px;
-      font-size: 15px;
+      font-size: 9px;
       font-weight: 600;
     }
 
@@ -73,16 +74,21 @@
         font-size: 28px;
         font-weight: normal;
         letter-spacing: 3px;
+      }
 
+      .why-as__container--row {
+        display: flex;
+        flex-direction: row;
       }
 
       .why-as__container {
+        width: 50%;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         align-items: baseline;
-        padding-left: 90px;
-        padding-right: 90px;
+        padding-left: 0px;
+        padding-right: 0px;
       }
 
       .why-as__item {
@@ -103,31 +109,39 @@
         width: 150px;
       }
     }
+    
   </style>
   <div class='why-as__section'>
     <div class='why-as__title'>
       <span>DLACZEGO MY</span>
     </div>
-    <div class='why-as__container'>
-      <div class='why-as__item'>
-        <img src="https://i.ibb.co/nm5cKyG/dlaczego-my-darmowa-wysylka.jpg" alt="Darmowa dostawa" />
-        <span class="why-as__text">DARMOWA DOSTAWA</span>
+    <div class='why-as__container--row'>
+      <div class='why-as__container'>
+        <div class='why-as__item'>
+          <img src="https://i.ibb.co/nm5cKyG/dlaczego-my-darmowa-wysylka.jpg" alt="Darmowa dostawa" />
+          <span class="why-as__text">DARMOWA DOSTAWA</span>
+        </div>
+        <div class='why-as__item'>
+          <img src="https://i.ibb.co/8b2Kn4h/dlaczego-my-zwrot.jpg" alt="Zwrot w ciągu 100 dni" />
+          <span class="why-as__text">ZWROT W CIĄGU <br /> 100 DNI</span>
+        </div>
       </div>
-      <div class='why-as__item'>
-        <img src="https://i.ibb.co/8b2Kn4h/dlaczego-my-zwrot.jpg" alt="Zwrot w ciągu 100 dni" />
-        <span class="why-as__text">ZWROT W CIĄGU <br /> 100 DNI</span>
-      </div>
-      <div class='why-as__item'>
-        <img src="https://i.ibb.co/FxcTBGM/dlaczego-my-24h.jpg" alt="Szybka wysyłka" " />
+      <div class='why-as__container'>
+        <div class='why-as__item'>
+          <img src="https://i.ibb.co/FxcTBGM/dlaczego-my-24h.jpg" alt="Szybka wysyłka" />
           <span class=" why-as__text">SZYBKA WYSYŁKA</span>
+        </div>
+        <div class='why-as__item'>
+          <img src="https://i.ibb.co/QmGmFg8/dlaczego-my-pozytywne-opinie.jpg" alt="99% pozytywnych opini" />
+          <span class="why-as__text" style="padding-bottom: 20px;">99% POZYTYWNYCH <br /> OPINI</span>
+        </div>
+
       </div>
-      <div class='why-as__item'>
-        <img src="https://i.ibb.co/QmGmFg8/dlaczego-my-pozytywne-opinie.jpg" alt="99% pozytywnych opini" />
-        <span class="why-as__text" style="padding-bottom: 20px;">99% POZYTYWNYCH <br /> OPINI</span>
-      </div>
+
     </div>
   </div>
-   <!-- End Section Why-as-->
+  </div>
+  <!-- End Section Why-as-->
   <div>
     próba
   </div>
