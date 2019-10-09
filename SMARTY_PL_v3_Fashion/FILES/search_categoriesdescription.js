@@ -1,0 +1,4 @@
+
+app_shop.fn.categoryDivider=function categoryDivider(selector){var description=selector||".search_categoriesdescription_sub",children=$(description).children(),categorySize=app_shop.vars.categorySize||512;if(children.length>1&&!$(".search_categoriesdescription_next").length&&categorySize!==0){$(description).after('<div class="search_categoriesdescription_next cm"><a class="show_description">'+app_shop.vars.show_description+'</a></div>');$.each(children,function(indexInArray,valueOfElement){var amount_with_element_length=(categorySize-valueOfElement.innerText.length)*-1;if(categorySize-valueOfElement.innerText.length<=0&&amount_with_element_length>=categorySize){$(valueOfElement).appendTo(".search_categoriesdescription_next");}
+categorySize-=valueOfElement.innerText.length;});}
+$(description).removeClass("skeleton");return false;};
