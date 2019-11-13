@@ -130,6 +130,9 @@
 				<meta property="fb:admins" content="{{$xml->getItemEscape("/shop/page/facebook_comments/@admin_id")}}"/>
 				<meta property="fb:app_id" content="{{$xml->getItemEscape("/shop/page/facebook_comments/@app_id")}}"/>
 			{{/if}}
+			<!-- edited by Justyna Makowska-->
+			  <link href="http://pl.allfont.net/allfont.css?fonts=open-sans-semibold" rel="stylesheet" type="text/css" />
+			<!-- edited by Justyna Makowska -->
 			<!--IAI_TEMPLATE_additional_meta_tags-->
 			<script type="text/javascript">
                         var app_shop = {

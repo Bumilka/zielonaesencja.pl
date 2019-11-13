@@ -22,8 +22,9 @@
 			<a href="/categories.php" title="{{$txt['106527::TXT_106527_menu_label_title']}}">{{$menu_categories_label}}</a>
 		</h2>
 	{{/if}}
+
 	<button type="button" class="navbar-toggler">
-		<i class="icon-reorder"/>
+		<i class="icon-reorder">
 	</button>
 	<div class="navbar-collapse" id="menu_navbar">
 		<ul class="navbar-nav">
@@ -31,8 +32,9 @@
 				<li {{assign "classAttributeTmp1" ""}}{{capture name="classAttributeTmp1" assign="classAttributeTmp1"}}nav-item{{/capture}}{{if ( ( $loop21->getItem("@ni") == (string) $current_item) or ( $loop21->getItem("item/@ni") == (string) $current_item) or ( $loop21->getItem("item/item/@ni") == (string) $current_item) or ( $loop21->getItem("item/item/item/@ni") == (string) $current_item) )}}{{capture name="classAttributeTmp1" assign="classAttributeTmp1"}}nav-item active{{/capture}}{{/if}}  class="{{$classAttributeTmp1}}">
 					{{if  $loop21->getItem("@link") and  $loop21->getItem("@link")  neq (string) '##'}}
 						{{literal}}
+
 						<a href="{{/literal}}{{$loop21->getItemEscape("@link")}}{{literal}}" target="{{/literal}}{{$loop21->getItemEscape("@target")}}{{literal}}" title="{{/literal}}{{$loop21->getItemEscape("@name")}}{{else}}{{literal}}
-<span{{/literal}}{{literal}} title="{{/literal}}{{$loop21->getItemEscape("@name")}}{{/if}}{{literal}}" class="nav-link{{/literal}}{{if ( $loop21->getItem("@ni") == (string) $loop21->getItem("/shop/navigation/current/@ni")) or ( $loop21->getItem("item//@ni") == (string) $loop21->getItem("/shop/navigation/current/@ni"))}}{{literal}} active{{/literal}}{{/if}}{{if $loop21->getItem("@reload") and $loop21->getItem("@reload") == (string) 'y'}}{{literal}} noevent{{/literal}}{{/if}}{{literal}}" >{{/literal}}
+<span {{/literal}}{{literal}} title="{{/literal}}{{$loop21->getItemEscape("@name")}}{{/if}}{{literal}}" class="nav-link{{/literal}}{{if ( $loop21->getItem("@ni") == (string) $loop21->getItem("/shop/navigation/current/@ni")) or ( $loop21->getItem("item//@ni") == (string) $loop21->getItem("/shop/navigation/current/@ni"))}}{{literal}} active{{/literal}}{{/if}}{{if $loop21->getItem("@reload") and $loop21->getItem("@reload") == (string) 'y'}}{{literal}} noevent{{/literal}}{{/if}}{{literal}}" >{{/literal}}
 							{{if  $loop21->getItem("@gfx") or  $loop21->getItem("@gfx_active_type")}}
 								<img alt="{{$loop21->getItem("@name")}}" title="{{$loop21->getItem("@name")}}" {{if $loop21->getItem("@gfx_active_type") == (string) 'img_rwd'}} class="rwd-src" {{if $loop21->getItem("@gfx_active_desktop")}} data-src_desktop="{{$loop21->getItemEscape("@gfx_active_desktop")}}" {{/if}}{{if $loop21->getItem("@gfx_active_tablet")}} data-src_tablet="{{$loop21->getItemEscape("@gfx_active_tablet")}}" {{/if}}{{if $loop21->getItem("@gfx_active_mobile")}} data-src_mobile="{{$loop21->getItemEscape("@gfx_active_mobile")}}" {{/if}}{{else}} src="{{$loop21->getItemEscape("@gfx")}}" {{/if}}></img>
 							{{else}}

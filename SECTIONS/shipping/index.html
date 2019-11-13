@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .shipping-section__list,
+        .shipping-section__row {
+            margin: 0;
+            padding: 10px;
+            list-style: none;
+        }
+
+        .shipping-section__list {
+            margin: 1em auto;
+            max-width: 980px;
+        }
+
+        .shipping-section__row {
+            clear: both;
+            padding: 1em 0;
+            border-top: 1px solid #dad9d5;
+        }
+
+        .shipping-section__item {
+            box-sizing: border-box;
+        }
+
+        .shipping-section__free-shiping {
+            color: #5cbf14 !important;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .shipping-section__shipping-icon {
+            float: left;
+            padding-right: 10px;
+            width: 80px;
+        }
+
+        @media screen and (min-width: 800px) {
+            .shipping-section__item {
+                width: 50%;
+                float: left;
+            }
+
+            .shipping-section__item {
+                padding-left: 75px;
+            }
+        }
+
+        .shipping-section__button-time {
+            border-style: solid;
+            border-color: #5bbf145e;
+            padding: 0.5em 1em;
+            color: black;
+        }
+
+        .shipping-section__button-pay {
+            border-style: solid;
+            padding: 0.5em 1em;
+            border-color: rgba(0, 0, 0, 0.295);
+        }
+
+        .shipping-list-section {
+            padding: 1em;
+            font: 16px/1.5 sans-serif;
+        }
+    </style>
+    <section class="shipping-list__section">
+        <div>
+            <article>
+                <p>
+                    Dokładamy wszelkich starań, aby wysłać przesyłki najszybciej jak tylko się da, dlatego przesyłki
+                    wysyłamy codziennie maksymalnie skracając czas dostarczenia ich w Twoje ręce. Przesyłki wysyłamy w
+                    ciągu 24 godzin od zaksięgowania wpłaty, bądź wybrania przesyłki pobraniowej.
+                </p>
+                    <p style="font-size: 18px; font-weight: 700; color:rgb(91, 93, 104)">
+                        REALIZACJA ZAMÓWIENIA = czas przygotowania zamówienia do wysyłki + czas dostawy przez firmę
+                        kurierską
+                    </p>
+                <p class="shipping-section__free-shiping">
+                    PRZY ZAMÓWIENIU POWYŻEJ 199 ZŁ OBOWIĄZUJE PRZESYŁKA GRATIS!*
+                </p>
+                <p>
+                    *Darmowa wysyłka obowiązuje tylko na terenie kraju za pośrednictwem Poczty Polskiej i Paczkomatów z
+                    przedpłatą.
+
+                </p>
+            </article>
+        </div>
+        <ul class="shipping-section__list">
+            <li class="shipping-section__row">
+                <div class="shipping-section__item">
+                    <div>
+                        <img class="shipping-section__shipping-icon"
+                            src="/zielonaesencja.pl/SECTIONS/data/include/deliveries/icons/75_1.gif" />
+                        <h2>Poczta Polska: Kurier 48. Dostawa do klienta</h2>
+                    </div>
+                    <ul>
+                        <li>
+                            Dwie próby doręczenia
+                        </li>
+                        <li>
+                            Możliwość odbioru w najbliższej placówce Poczty Polskiej
+                        </li>
+                    </ul>
+                    <p>
+                        W przypadku nie odebrania przesyłki od kuriera klient otrzymuje awizo.
+                        W przypadku dwukrotnego braku możliwości odebrania przesyłki można zgłosić się do najbliższego
+                        oddziału firmy, bądź kontaktować się z kurierem.
+                    </p>
+                    <p class="shipping-section__button-time">Sam transport zajmie: <b>2 dni robocze</b></p>
+                    <p class="shipping-section__button-pay">Płatność przy odbiorze: <b>11,90 zł</b> <br>
+                        Płatność przed wysyłką: <b>8,60 zł</b>
+                    </p>
+                </div>
+                <div class="shipping-section__item">
+                    <div>
+                        <img class="shipping-section__shipping-icon"
+                            src="/zielonaesencja.pl/SECTIONS/data/include/deliveries/icons/76_1.gif" />
+                        <h2>Poczta Polska: Odbiór osobisty w punkcie</h2>
+                    </div>
+                    <ul>
+                        <li>
+                            Dwie próby doręczenia
+                        </li>
+                        <li>
+                            Możliwość odbioru w najbliższej placówce Poczty Polskiej
+                        </li>
+                    </ul>
+                    <p>
+                        W przypadku nie odebrania przesyłki od kuriera klient otrzymuje awizo.
+                        W przypadku dwukrotnego braku możliwości odebrania przesyłki można zgłosić się do najbliższego
+                        oddziału firmy, bądź kontaktować się z kurierem.
+                    </p>
+                    <p class="shipping-section__button-time">Sam transport zajmie: <b>2 dni robocze </b>
+                    </p>
+                    <p class="shipping-section__button-pay">Płatność przed wysyłką: <b> 8,00 zł</b>
+                        <br />
+                        Płatność przy odbiorze: <b>10,50 zł</b>
+                    </p>
+                </div>
+            </li>
+            <li class="shipping-section__row">
+                <div class="shipping-section__item">
+                    <div>
+                        <img class="shipping-section__shipping-icon"
+                            src="/zielonaesencja.pl/SECTIONS/data/include/deliveries/icons/100059_1.gif" />
+                        <h2>Paczokmaty InPost</h2>
+                    </div>
+                    <ul>
+                        <li>
+                            Przesyłki odbierane są z magazynu następnego w godzinach rannych.
+                        </li>
+                        <li>
+                            Od tego momentu InPost dostarcza przesyłkę do Paczkomatów w ciągu 48 h.
+                        </li>
+                    </ul>
+                    <p>Przesyłka w Paczkomacie czeka na odbiór do 3 dni, po tym czasie w ciągu 10 dni przesyłkę można
+                        odebrać w najbliższym oddziale InPost</p>
+                    <p class="shipping-section__button-time">Sam transport zajmie: <b>2-3 dni robocze </b>
+                    </p>
+                    <p class="shipping-section__button-pay">Płatność przed wysyłką: <b>10,50 zł </b>
+                        <br />
+                        Płatność przy odbiorze: <b> 12,49 zł </b>
+                    </p>
+                </div>
+
+                <div class="shipping-section__item">
+                    <div>
+                        <img class="shipping-section__shipping-icon"
+                            src="/zielonaesencja.pl/SECTIONS/data/include/deliveries/icons/100160_1.gif" />
+                        <h2>Paczokmaty Inpost Allegro</h2>
+                    </div>
+                    <ul>
+                        <li>
+                            Przesyłki odbierane są z magazynu następnego w godzinach rannych.
+                        </li>
+                        <li>
+                            Od tego momentu InPost dostarcza przesyłkę do Paczkomatów w ciągu 48 h.
+                        </li>
+                    </ul>
+                    <p>Przesyłka w Paczkomacie czeka na odbiór do 3 dni, po tym czasie w ciągu 10 dni przesyłkę można
+                        odebrać w najbliższym oddziale InPost</p>
+                    <p class="shipping-section__button-time">Sam transport zajmie: <b> 2 dni robocze </b>
+                    </p>
+                    <p class="shipping-section__button-pay">Płatność przed wysyłką: <b> 12,18 zł</b> <br />
+                        Płatność przy odbiorze: <b> 15,68 zł </b>
+                    </p>
+                </div>
+            </li>
+            <li class="shipping-section__row">
+
+                <div class="shipping-section__item">
+                    <div>
+                        <img class="shipping-section__shipping-icon"
+                            src="/zielonaesencja.pl/SECTIONS/data/include/deliveries/icons/51_1.gif" />
+                        <h2>Kurier DPD</h2>
+                    </div>
+                    <ul>
+                        <li>
+                            Przesyłka dostarczana zazwyczaj na drugi dzień roboczy.
+                        </li>
+                        <li>
+                            Kurier posiada numer telefonu klienta.
+                        </li>
+                        <li>
+                            W przypadku nie odebrania przesyłki od kuriera klient otrzymuje awizo.
+                        </li>
+                    </ul>
+                    <p>W przypadku dwukrotnego braku możliwości odebrania przesyłki można zgłosić się do najbliższego
+                        oddziału firmy, bądź kontaktować się z kurierem.</p>
+                    <p class="shipping-section__button-time">Sam transport zajmie: <b>1 dzień roboczy </b>
+                    </p>
+                    <p class="shipping-section__button-pay">Płatność przed wysyłką: <b> 17,05 zł</b>
+                        <br />
+                        Płatność przy odbiorze: <b>19,27 zł </b>
+                    </p>
+                </div>
+                <div class="shipping-section__item">
+                    <div>
+                        <img class="shipping-section__shipping-icon"
+                            src="/zielonaesencja.pl/SECTIONS/data/include/deliveries/icons/100105_1.gif" />
+                        <h2>Wysyłka za granicę</h2>
+                    </div>
+                    <p>Przesyłki realizujemy również za granicę.
+
+                        W przypadku chęci wysyłki za granicę prosimy o kontakt telefoniczny, bądź mailowy.
+
+                        Wysyłka za granicę tylko za przedpłatą.
+
+                        Stały koszt wysyłki do 30 kg.</p>
+                    <p>Wiecej informacji uzyskaz kontaktujac się z biurem</p>
+                    </p>
+                </div>
+            </li>
+            <li class="shipping-section__row">
+
+                <div class="shipping-section__item">
+                    <div>
+                        <img class="shipping-section__shipping-icon"
+                            src="/zielonaesencja.pl/SECTIONS/data/include/deliveries/icons/100105_1.gif" />
+                        <h2>Sklep stacjonarny Pyrzyce</h2>
+                    </div>
+                    <p>
+                        Paczki dostarczane do punktów w wyznaczone dni:<b> WTOREK, CZWARTEK </b>
+                        <p>
+                            <p>Green Essence - Sklep Zielarsko-Medyczny <br />Ul. Kilińskiego 11 <br />74-200 Pyrzyce
+                            </p>
+                            <p class="shipping-section__button-time">Sam transport zajmie:<b> 2 dni </b>
+                                roboczy </p>
+                            <p class="shipping-section__button-pay">Płatność przed wysyłką:
+                                <b>Gratis </b>
+                                <br />
+                                Płatność przy odbiorze: <b> Gratis</b>
+                            </p>
+                </div>
+                <div class="shipping-section__item">
+                    <div>
+                        <img class="shipping-section__shipping-icon"
+                            src="/zielonaesencja.pl/SECTIONS/data/include/deliveries/icons/100105_1.gif" />
+                        <h2>Sklep stacjonarny Szczecin</h2>
+                    </div>
+                    <p>Paczki dostarczane do punktów w wyznaczone dni: <b>ŚRODA</b>
+
+                        <p>Green Essence - Sklep Zielarsko-Medyczny <br />C. H. U. Manhattan, pawilon 56C <br />ul. Ks.
+                            Staszica 1 <br />71-515 Szczecin</p>
+                        <p class="shipping-section__button-time">Sam transport zajmie: <b> 7 dni</b>
+                            roboczych </p>
+                        <p class="shipping-section__button-pay">Płatność przed wysyłką: <b>Gratis </b>
+                            <br />
+                            Płatność przy odbiorze:<b> Gratis </b>
+                        </p>
+                </div>
+            </li>
+        </ul>
+    </section>
+</body>
+
+</html>
